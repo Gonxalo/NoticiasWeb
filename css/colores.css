@@ -1,0 +1,50 @@
+/*.color1{
+	background-color:yellow;
+}
+.color2{
+	background-color:red;
+}
+.color3{
+	background-color:blue;
+}
+.color4{
+	background-color:gray;
+}
+.color5{
+	background-color:red;
+}
+*/
+.color1
+{
+	background: gray;
+}
+.color2 {
+	background: blue;
+}
+.color3{
+	background: orange;
+}
+.color4{
+	background: brown;	
+}
+.color5{
+	background: yellow;
+}
+.col-centered {
+    text-align:center;
+}
+.header {
+	margin: 20px;
+}
+.seccion{
+	max-width: 1200px;
+	margin-top: 10px;
+}
+.seccion p{
+	max-width: 200px;
+}
+.controls {
+   	position: relative;
+   	display: block;
+}
+
