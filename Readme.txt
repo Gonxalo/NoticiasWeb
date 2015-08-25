@@ -1,1 +1,1 @@
-nada
+Sistema de NOticias web hecho en ASP.NET MVC en lenguaje CSharp.
