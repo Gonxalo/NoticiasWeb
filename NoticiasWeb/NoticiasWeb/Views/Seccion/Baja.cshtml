@@ -1,0 +1,23 @@
+﻿@model  NoticiasWeb.Models.Seccion
+@{
+    ViewBag.Title = "Baja";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar Seccion</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.Seccion_Id) <br />
+
+    <label>Nombre: </label>
+    @Html.DisplayFor(x => x.NombreSeccion)
+    <br />
+    
+    <label>Descripcion</label>
+    @Html.DisplayFor(x => x.DescripcionSeccion)
+    <br />
+
+    <input type="submit" value="Eliminar" />
+    @Html.ActionLink("Cancelar", "Index")
+}

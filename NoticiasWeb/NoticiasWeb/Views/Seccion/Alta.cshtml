@@ -1,0 +1,22 @@
+﻿@model NoticiasWeb.Models.Seccion
+@{
+    ViewBag.Title = "Alta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alta de Seccion</h2>
+@using (Html.BeginForm())
+{
+    <label>Nombre: </label>
+    @Html.TextBoxFor(x => x.NombreSeccion) 
+    @Html.ValidationMessageFor(model => model.NombreSeccion)<br />
+    
+    <label>Descripcion</label>
+    @Html.TextBoxFor(x => x.DescripcionSeccion) 
+    @Html.ValidationMessageFor(model => model.DescripcionSeccion)<br />
+    
+
+    <input type="submit" value="Agregar" />
+    @Html.ActionLink("Cancelar", "Index")
+}
+

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<NoticiasWeb.Models.Seccion>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Seciones.</h2>
+
+@Html.ActionLink("Agregar Seccion", "Alta")
+
+<ul>
+    @foreach (var seccion in Model)
+    {
+        <li>
+           @seccion.NombreSeccion | @Html.ActionLink("Editar", "Editar", new {id = @seccion.Seccion_Id}) | @Html.ActionLink("Eliminar", "Baja", new {id = @seccion.Seccion_Id})
+        </li>
+    }    
+</ul>

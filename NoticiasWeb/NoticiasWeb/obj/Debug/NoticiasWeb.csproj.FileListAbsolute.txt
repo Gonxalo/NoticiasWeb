@@ -29,3 +29,34 @@ C:\Users\Gonzalo Reyes\documents\visual studio 2013\Projects\NoticiasWeb\Noticia
 C:\Users\Gonzalo Reyes\documents\visual studio 2013\Projects\NoticiasWeb\NoticiasWeb\obj\Debug\NoticiasWeb.pdb
 C:\Users\Gonzalo Reyes\documents\visual studio 2013\Projects\NoticiasWeb\NoticiasWeb\obj\Debug\NoticiasWeb.Migrations.noticia.resources
 C:\Users\Gonzalo Reyes\documents\visual studio 2013\Projects\NoticiasWeb\NoticiasWeb\obj\Debug\NoticiasWeb.csproj.GenerateResource.Cache
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\NoticiasWeb.dll.config
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\NoticiasWeb.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\NoticiasWeb.pdb
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\EntityFramework.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\EntityFramework.SqlServer.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.Helpers.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.Mvc.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.Razor.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.WebPages.Deployment.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.WebPages.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.WebPages.Razor.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\EntityFramework.xml
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\EntityFramework.SqlServer.xml
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.Helpers.xml
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.Mvc.xml
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.Razor.xml
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.WebPages.xml
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.WebPages.Deployment.xml
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\System.Web.WebPages.Razor.xml
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\es\System.Web.Helpers.resources.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\es\System.Web.Mvc.resources.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\es\System.Web.Razor.resources.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\es\System.Web.WebPages.resources.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\obj\Debug\NoticiasWeb.csprojResolveAssemblyReference.cache
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\obj\Debug\NoticiasWeb.Migrations.noticia.resources
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\obj\Debug\NoticiasWeb.csproj.GenerateResource.Cache
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\obj\Debug\NoticiasWeb.dll
+D:\Source\NoticiasWeb\NoticiasWeb\NoticiasWeb\obj\Debug\NoticiasWeb.pdb

@@ -9,26 +9,101 @@ namespace NoticiasWeb.Controllers
 {
     public class SeccionController : Controller
     {
-        //
-        // GET: /Seccion/
+        private Contexto context = null;
+        public SeccionController()
+        {
+            context = new Contexto();
+        }
         public ActionResult Index()
         {
-           Contexto context = new Contexto();
-          List<Seccion> secciones = context.seccion.ToList();
-          return View(secciones);
+            List<Seccion> secciones = context.seccion.ToList();
+            return View(secciones);
         }
         public ActionResult Alta()
         {
             return View();
         }
-        public ActionResult Baja()
+
+        [HttpPost]
+        public ActionResult Alta(Seccion seccion)
         {
-            return View();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    context.seccion.Add(seccion);
+                    context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                    return View();
+            }
+            catch(Exception ex)
+            {
+                ModelState.AddModelError("Fail", ex.Message);
+                return View();
+            }
+            
         }
+
+        public ActionResult Baja(int id)
+        {
+            Seccion seccion = context.seccion.Find(id);
+            if (seccion != null)
+                return View(seccion);
+            else
+                return View();
+        }
+
+        [HttpPost, ActionName("Baja")]
+        public ActionResult ConfirmarBaja(int id)
+        {
+            try
+            {
+                Seccion seccion = context.seccion.Find(id);
+                context.seccion.Remove(seccion);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch(Exception ex)
+            {
+                return View();
+            }
+            
+        }
+
         public ActionResult Detalle()
         {
-           
-            return View();
+           return View();
+        }
+
+        public ActionResult Editar(int id)
+        {
+            Seccion seccion = context.seccion.Find(id);
+            if (seccion != null)
+                return View(seccion);
+            else
+                return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Editar(Seccion seccion)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    context.Entry(seccion).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                    return View();
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }
         }
 	}
 }
