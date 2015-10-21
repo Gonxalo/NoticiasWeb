@@ -1,0 +1,39 @@
+﻿@model NoticiasWeb.Models.Categoria
+@{
+    ViewBag.Title = "Baja";
+   // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2> 
+
+
+
+<div class="modal fade" id="Popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>prueba de popup</h4>
+            </div>
+            <div class=" modal-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.HiddenFor(x => x.Categoria_Id) <br />
+                    <label>Nombre Categoria: </label>
+                    @Html.DisplayFor(x => x.NombreCategoria) <br />
+
+                    <label>Descripcion Categoria</label>
+                    @Html.DisplayFor(x => x.DescripcionCategoria) <br />
+
+                    <input type="submit" value="Eliminar" />
+                    @Html.ActionLink("Cancelar", "Index");
+                }
+
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-default" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+

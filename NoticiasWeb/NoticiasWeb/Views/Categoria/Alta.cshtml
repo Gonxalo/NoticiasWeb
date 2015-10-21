@@ -1,0 +1,19 @@
+﻿@model NoticiasWeb.Models.Categoria
+@{
+    ViewBag.Title = "Alta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alta Categoria</h2>
+
+@using(Html.BeginForm())
+{
+    <label>Nombre Categoria: </label>
+    @Html.TextBoxFor(x => x.NombreCategoria) <br />
+    
+    <label>Descripcion Categoria: </label>
+    @Html.TextBoxFor(x => x.DescripcionCategoria) <br />
+    
+    <input type="submit" value="Agregar" />
+    @Html.ActionLink("Cancelar","Index")
+}

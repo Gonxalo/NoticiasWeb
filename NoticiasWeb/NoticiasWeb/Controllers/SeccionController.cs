@@ -9,8 +9,8 @@ namespace NoticiasWeb.Controllers
 {
     public class SeccionController : Controller
     {
-        private Contexto context = null;
-        public SeccionController()
+        private Contexto context = null; //nos enlaza a la cadena conexion
+        public SeccionController()   
         {
             context = new Contexto();
         }
@@ -18,6 +18,21 @@ namespace NoticiasWeb.Controllers
         {
             List<Seccion> secciones = context.seccion.ToList();
             return View(secciones);
+        }
+
+        public JsonResult Eliminar(int id=0)
+        {
+            Seccion seccion = context.seccion.Find(id);
+
+            if (seccion != null)
+            {
+                context.seccion.Remove(seccion);
+                context.SaveChanges();
+                return Json(seccion, JsonRequestBehavior.AllowGet);
+            }
+            else {
+                return Json("Fallo", JsonRequestBehavior.AllowGet);
+                }
         }
         public ActionResult Alta()
         {

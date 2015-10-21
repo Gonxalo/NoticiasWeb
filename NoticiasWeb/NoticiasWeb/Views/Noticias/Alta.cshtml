@@ -1,0 +1,37 @@
+﻿@model NoticiasWeb.Models.Noticias
+@{
+    ViewBag.Title = "Alta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alta Noticias</h2>
+
+@using (Html.BeginForm())
+{
+    <label>Titulo Noticias: </label>
+    @Html.TextBoxFor(x => x.Titulo) <br />
+
+    <label>Cuerpo Noticias: </label>
+    @Html.TextAreaFor(x => x.Cuerpo) <br />
+
+    <label>Habilitar </label>
+    @Html.CheckBoxFor(x => x.Activo) <br />
+
+    <label>Creado Por: </label>
+    @Html.DisplayFor(x => x.CreadoPor) <br />
+    
+     <label>Fecha de Creacion: </label>
+    @Html.DisplayFor(x => x.FechaCreacion) <br />
+    
+    <label>Categoria </label>
+    @Html.DropDownListFor(x => x.Categoria_Id, new SelectList(Model.categoria, "Categoria_Id", "NombreCategoria")) <br />
+    
+     <label>Editado Por: </label>
+    @Html.DisplayFor(x => x.EditadoPor) <br />
+    
+     <label>Seccion </label>
+    @Html.DropDownListFor(x => x.Seccion_Id, new SelectList(Model.seccion, "Seccion_Id", "NombreSeccion")) <br />    
+    
+    <input type="submit" value="Agregar" />
+    @Html.ActionLink("Cancelar", "Index")
+}

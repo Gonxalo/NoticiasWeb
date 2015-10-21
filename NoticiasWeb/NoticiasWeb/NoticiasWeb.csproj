@@ -104,7 +104,11 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -127,6 +131,10 @@
     <Compile Include="Migrations\201508292305475_noticia.Designer.cs">
       <DependentUpon>201508292305475_noticia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510180709054_noticiasweb.cs" />
+    <Compile Include="Migrations\201510180709054_noticiasweb.Designer.cs">
+      <DependentUpon>201510180709054_noticiasweb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Contexto.cs" />
@@ -145,6 +153,18 @@
     <Content Include="Views\Seccion\Alta.cshtml" />
     <Content Include="Views\Seccion\Editar.cshtml" />
     <Content Include="Views\Seccion\Baja.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Categoria\Alta.cshtml" />
+    <Content Include="Views\Categoria\Baja.cshtml" />
+    <Content Include="Views\Categoria\Editar.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Noticias\Index.cshtml" />
+    <Content Include="Views\Noticias\Alta.cshtml" />
+    <Content Include="Views\Noticias\Baja.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -154,13 +174,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Categoria\" />
-    <Folder Include="Views\Noticias\" />
-    <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201508292305475_noticia.resx">
       <DependentUpon>201508292305475_noticia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510180709054_noticiasweb.resx">
+      <DependentUpon>201510180709054_noticiasweb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

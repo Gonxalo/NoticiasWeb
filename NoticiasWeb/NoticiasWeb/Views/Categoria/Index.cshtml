@@ -1,21 +1,25 @@
-﻿@model IEnumerable<NoticiasWeb.Models.Seccion>
+﻿<!--recibire una lista de categoria-->
+@model IEnumerable<NoticiasWeb.Models.Categoria>
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Seciones.</h2>
+<h2>Index Categoria</h2>
 
-@Html.ActionLink("Agregar Seccion", "Alta")
+@Html.ActionLink("Agregar Categoria", "Alta");
 
+<h5>Se mostrara lista de categoria enseguida</h5>
 <ul>
-    @foreach (var seccion in Model)
+    @foreach (var categoria in Model)
     {
-        <li id="@seccion.Seccion_Id">
-           @seccion.NombreSeccion | @Html.ActionLink("Editar", "Editar", new { id = @seccion.Seccion_Id }) | <a href="#" class="elimina" data-id="@seccion.Seccion_Id">Eliminar</a>
+    
+        <li id="@categoria.Categoria_Id">
+            @categoria.NombreCategoria | @Html.ActionLink("Editar", "Editar", new {id=@categoria.Categoria_Id}) |<a href="#" class="eliminar" data-id="@categoria.Categoria_Id">Eliminar</a>@*@Html.ActionLink("Baja", "Baja", new { id = @categoria.Categoria_Id })*@
         </li>
-    }    
+    }
 </ul>
-
+    
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -37,16 +41,16 @@
 <script src="~/Scripts/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-    $('.elimina').click(function () {
+    $('.eliminar').click(function () {
         var idEliminar = $(this).attr("data-id");
         $("#btnEliminar").attr("data-eliminar", idEliminar);
         $("#myModal").modal();
     });
-
+   
     $("#btnEliminar").click(function () {
         var idEliminar = $(this).attr("data-eliminar");
         $.ajax({
-            url: '/Seccion/Eliminar',
+            url: '/Categoria/Eliminar',
             type: 'get',
             data: { id: idEliminar },
             dataType: 'json',

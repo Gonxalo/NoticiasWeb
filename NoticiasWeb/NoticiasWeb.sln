@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoticiasWeb", "NoticiasWeb\NoticiasWeb.csproj", "{97D20A4F-B03B-4B47-9A40-35B3C39FA405}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoticiasAPPs", "NoticiasAPPs\NoticiasAPPs.csproj", "{72D9EEA9-E294-499F-A631-DF5E9254376B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{97D20A4F-B03B-4B47-9A40-35B3C39FA405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97D20A4F-B03B-4B47-9A40-35B3C39FA405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97D20A4F-B03B-4B47-9A40-35B3C39FA405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72D9EEA9-E294-499F-A631-DF5E9254376B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D9EEA9-E294-499F-A631-DF5E9254376B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D9EEA9-E294-499F-A631-DF5E9254376B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D9EEA9-E294-499F-A631-DF5E9254376B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

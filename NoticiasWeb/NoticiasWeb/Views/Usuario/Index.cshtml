@@ -1,0 +1,112 @@
+﻿@model IEnumerable<NoticiasWeb.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoPaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoMaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNaciemiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr id="@item.Usuario_Id">
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoPaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoMaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNaciemiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Usuario_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Usuario_Id }) |
+            <a href="#" class="eliminar" data-id="@item.Usuario_Id">Eliminar</a>
+        </td>
+    </tr>
+}
+
+</table>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+            </div>
+            <div class="modal-body">
+                ¿Esta seguro que queire eliminar este registro?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnEliminar" data-eliminar="">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-2.1.4.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $('.eliminar').click(function () {
+        var idEliminar = $(this).attr("data-id");
+        $("#btnEliminar").attr("data-eliminar", idEliminar);
+        $("#myModal").modal();
+    });
+
+    $("#btnEliminar").click(function () {
+        var idEliminar = $(this).attr("data-eliminar");
+        $.ajax({
+            url: '/Usuario/Eliminar',
+            type: 'get',
+            data: { id: idEliminar },
+            dataType: 'json',
+            success: function (result) {
+                console.log("Exito");
+                //buscar el Id y eliminar ese nodo de la lista
+                $("#" + idEliminar).remove();
+                $("#myModal").modal('hide');
+            },
+            error: function () {
+                console.log("fallo");
+            }
+        });
+    });
+</script>
+

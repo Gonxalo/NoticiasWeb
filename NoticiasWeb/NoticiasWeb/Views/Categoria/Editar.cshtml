@@ -1,0 +1,23 @@
+﻿@model NoticiasWeb.Models.Categoria
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editar Categoria</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.Categoria_Id);
+    
+    <label>Nombre Categoria</label>
+    @Html.TextAreaFor(x => x.NombreCategoria); 
+    
+    <label>Descripcion Categoria</label>
+    @Html.TextAreaFor(x => x.DescripcionCategoria);
+    
+    <input type="submit" value="Editar" />
+    
+    @Html.ActionLink("Cancelar","Index");
+}
+
