@@ -32,19 +32,10 @@ namespace NoticiasWeb.Models
         [Required]
         public int EditadoPor { get; set; }
 
-        [Required]
-        public int Categoria_Id { get; set; }
-
-        [Required]
-        public int Usuario_Id { get; set; }
-
-        [Required]
-        public int Seccion_Id { get; set; }
-
         public virtual Usuario usuario { get; set; }
 
-        public virtual ICollection<Categoria> categoria { get; set; }
+        public virtual Categoria categoria { get; set; }
 
-        public virtual ICollection<Seccion> seccion { get; set; }
+        public virtual Seccion seccion { get; set; }
     }
 }

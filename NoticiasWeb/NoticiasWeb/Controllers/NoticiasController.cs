@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NoticiasWeb.Models;
+using NoticiasWeb.ViewModels;
 
 namespace NoticiasWeb.Controllers
 {
@@ -23,32 +24,57 @@ namespace NoticiasWeb.Controllers
         {
             noticia = context.noticias.ToList();
             return View(noticia);
-        }
+        }   
 
         public ActionResult Alta()
         {
-            Noticias notice = new Noticias();
-            notice.categoria = context.categoria.ToList();
-            notice.seccion = context.seccion.ToList();
-            notice.FechaCreacion = DateTime.Today.ToShortDateString();
-            return View(notice);
+            NoticiasViewModel noticias = new NoticiasViewModel()
+            {
+                categoria = context.categoria.ToList(),
+                seccion = context.seccion.ToList(),
+                usuario = context.usuario.FirstOrDefault(),
+                FechaCreacion = DateTime.Today.ToShortDateString(),
+                CreadoPor = context.usuario.First().Usuario_Id,
+                EditadoPor = context.usuario.First().Usuario_Id,
+            };
+            return View(noticias);
         }
         [HttpPost]
-        public ActionResult Alta(Noticias noticia)
+        public ActionResult Alta(NoticiasViewModel noticias)
         {
-            if (ModelState.IsValid)
+            try
             {
-                context.noticias.Add(noticia);
-                context.SaveChanges();
-                return RedirectToAction("Index");
+                
+                Noticias noticiaModel = new Noticias()
+                {
+                    Activo = noticias.Activo,
+                    CreadoPor = noticias.CreadoPor,
+                    Cuerpo = noticias.Cuerpo,
+                    EditadoPor = noticias.EditadoPor,
+                    FechaCreacion = noticias.FechaCreacion,
+                    Titulo = noticias.Titulo,
+                    usuario = noticias.usuario,
+                    seccion = context.seccion.Where(x => x.Seccion_Id == noticias.CategoriaId).First(),
+                    categoria = context.categoria.Where(x => x.Categoria_Id == noticias.CategoriaId).First()
+                };
+                if(ModelState.IsValid)
+                {
+                    context.noticias.Add(noticiaModel);
+                    context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    noticias.seccion = context.seccion.ToList();
+                    noticias.categoria = context.categoria.ToList();
+
+                    return View(noticias);
+                }
+                
             }
-            else
+            catch (Exception)
             {
-                Noticias notice = new Noticias();
-                notice.categoria = context.categoria.ToList();
-                notice.seccion = context.seccion.ToList();
-                notice.FechaCreacion = DateTime.Today.ToShortDateString();
-                return View();
+                return View(noticias);
             }
         }
         public ActionResult Baja()

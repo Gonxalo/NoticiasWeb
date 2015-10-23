@@ -135,6 +135,14 @@
     <Compile Include="Migrations\201510180709054_noticiasweb.Designer.cs">
       <DependentUpon>201510180709054_noticiasweb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510210444061_NoticasChange.cs" />
+    <Compile Include="Migrations\201510210444061_NoticasChange.Designer.cs">
+      <DependentUpon>201510210444061_NoticasChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510230307279_ChangeModel.cs" />
+    <Compile Include="Migrations\201510230307279_ChangeModel.Designer.cs">
+      <DependentUpon>201510230307279_ChangeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Contexto.cs" />
@@ -142,6 +150,7 @@
     <Compile Include="Models\Seccion.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\NoticiasViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -181,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510180709054_noticiasweb.resx">
       <DependentUpon>201510180709054_noticiasweb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510210444061_NoticasChange.resx">
+      <DependentUpon>201510210444061_NoticasChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510230307279_ChangeModel.resx">
+      <DependentUpon>201510230307279_ChangeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

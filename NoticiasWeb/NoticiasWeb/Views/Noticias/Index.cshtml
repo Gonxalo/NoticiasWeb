@@ -1,5 +1,4 @@
-﻿@*MODULO NOTICIAS PRINCIPAL*@
-@model IEnumerable<NoticiasWeb.Models.Noticias>
+﻿@model IEnumerable<NoticiasWeb.Models.Noticias>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,11 +6,11 @@
 
 <h2>Index Noticias</h2>
 
-@Html.ActionLink("Agregar Noticias", "Alta");
+@Html.ActionLink("Agregar Noticias", "Alta")
 
 @foreach (var noticias in Model)
 {
-    <li id="@noticias.Id">
+    <li id="@noticias.">
         @noticias.Titulo | @Html.ActionLink("Editar", "Editar", new { id = @noticias.Id }) |<a href="#" class="eliminar" data-id="@noticias.Id">Eliminar</a>
     </li>
 }

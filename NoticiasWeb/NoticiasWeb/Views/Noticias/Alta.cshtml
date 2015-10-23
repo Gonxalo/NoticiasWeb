@@ -1,4 +1,4 @@
-﻿@model NoticiasWeb.Models.Noticias
+﻿@model NoticiasWeb.ViewModels.NoticiasViewModel
 @{
     ViewBag.Title = "Alta";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,29 +8,31 @@
 
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary()
+    
     <label>Titulo Noticias: </label>
     @Html.TextBoxFor(x => x.Titulo) <br />
 
     <label>Cuerpo Noticias: </label>
     @Html.TextAreaFor(x => x.Cuerpo) <br />
 
-    <label>Habilitar </label>
+    <label>Activado </label>
     @Html.CheckBoxFor(x => x.Activo) <br />
 
     <label>Creado Por: </label>
     @Html.DisplayFor(x => x.CreadoPor) <br />
     
      <label>Fecha de Creacion: </label>
-    @Html.DisplayFor(x => x.FechaCreacion) <br />
+    @Html.TextBoxFor(x => x.FechaCreacion) <br />
     
     <label>Categoria </label>
-    @Html.DropDownListFor(x => x.Categoria_Id, new SelectList(Model.categoria, "Categoria_Id", "NombreCategoria")) <br />
+    @Html.DropDownListFor(x => x.CategoriaId, new SelectList(Model.categoria, "Categoria_Id", "NombreCategoria", Model.categoria.FirstOrDefault().Categoria_Id)) <br />
     
      <label>Editado Por: </label>
     @Html.DisplayFor(x => x.EditadoPor) <br />
     
      <label>Seccion </label>
-    @Html.DropDownListFor(x => x.Seccion_Id, new SelectList(Model.seccion, "Seccion_Id", "NombreSeccion")) <br />    
+    @Html.DropDownListFor(x => x.SeccionId, new SelectList(Model.seccion, "Seccion_Id", "NombreSeccion", Model.seccion.FirstOrDefault().Seccion_Id)) <br />    
     
     <input type="submit" value="Agregar" />
     @Html.ActionLink("Cancelar", "Index")
