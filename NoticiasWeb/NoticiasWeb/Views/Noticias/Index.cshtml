@@ -11,6 +11,10 @@
 @foreach (var noticias in Model)
 {
     <li id="@noticias.">
-        @noticias.Titulo | @Html.ActionLink("Editar", "Editar", new { id = @noticias.Id }) |<a href="#" class="eliminar" data-id="@noticias.Id">Eliminar</a>
+        @noticias.Titulo<br />
+        <p>
+            @noticias.Cuerpo.Substring(0, @noticias.Cuerpo.Length/2)
+        </p>
+        @Html.ActionLink("Editar", "Editar", new { id = @noticias.Id }) |<a href="#" class="eliminar" data-id="@noticias.Id">Eliminar</a>
     </li>
 }
